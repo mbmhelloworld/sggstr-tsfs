@@ -36,4 +36,3 @@ Run `ng test` to execute the frontend unit tests via [Karma](https://karma-runne
 Run `npm run testbe` to execute the backend tests via [Mocha](https://mochajs.org/) (it requires `mongod` already running).
 
 ## Running linters
-Run `npm run lint` to execute [Angular ESLint](https://github.com/angular-eslint/angular-eslint), [HTML linting](https://github.com/htmlhint/HTMLHint) and [SASS linting](https://github.com/sasstools/sass-lint).

@@ -2,10 +2,9 @@ import { compare, genSalt, hash } from 'bcryptjs';
 import { Document, model, Schema} from 'mongoose';
 
 const userSchema = new Schema<IUser>({
-  username: String,
+  username: { type: String },
   email: { type: String, unique: true, lowercase: true, trim: true },
-  password: String,
-  role: String
+  password: { type: String },
 });
 
 // Before saving the user, hash the password
