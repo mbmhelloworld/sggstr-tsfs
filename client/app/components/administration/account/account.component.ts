@@ -3,6 +3,7 @@ import { ToastComponent } from '../../../shared/toast/toast.component';
 import { AuthService } from '../../../services/auth.service';
 import { UserService } from '../../../services/user.service';
 import { User } from '../../../shared/models/user.model';
+import {ObjectId} from 'bson';
 
 @Component({
   selector: 'app-account',
@@ -22,7 +23,7 @@ export class AccountComponent implements OnInit {
   }
 
   getUser(): void {
-    this.userService.getUser(this.auth.currentUser).subscribe({
+    this.userService.getUser(new ObjectId(this.auth.currentUser._id)).subscribe({
       next: data => this.user = data,
       error: error => console.log(error),
       complete: () => this.isLoading = false
@@ -31,7 +32,7 @@ export class AccountComponent implements OnInit {
 
   save(user: User): void {
     this.userService.editUser(user).subscribe({
-      next: res => {
+      next: () => {
         this.toast.setMessage('Account settings saved!', 'success');
         this.auth.currentUser = user;
         this.auth.isAdmin = user.role === 'admin';

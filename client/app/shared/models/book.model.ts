@@ -1,11 +1,11 @@
-import Creator from '../../../../server/models/creator';
-import Genre from '../../../../server/models/genre';
+import {Creator} from './creator.model';
+import {Genre} from './genre.model';
 
 export class Book {
-  id?: string;
+  _id?: string;
   title?: string;
-  creator?: typeof Creator;
-  genre?: typeof Genre;
+  creator?: Creator;
+  genre?: Genre;
   buyLink?: URL;
   cover?: string;
 }

@@ -60,54 +60,54 @@ describe('Book', () => {
         });
     });
 
-    // it('should get a book by its id', done => {
-    //   const genre = new Genre ({name: 'Crime'});
-    //   const creator = new Creator({lastName: 'Writer' , foreName: 'Steven', origin: 'Germany' });
-    //   const book = new Book({ title: 'A Book', creator, genre ,link: 'www.google.com' });
-    //   book.save((error, newBook) => {
-    //     chai.request(app)
-    //       .get(`/api/book/${newBook.id}`)
-    //       .end((err, res) => {
-    //         res.should.have.status(200);
-    //         res.body.should.be.a('object');
-    //         res.body.should.have.a.property('title');
-    //         res.body.should.have.a.property('creator');
-    //         res.body.should.have.a.property('genre');
-    //         res.body.should.have.a.property('link');
-    //         res.body.should.have.property('_id').eql(newBook.id);
-    //         done();
-    //       });
-    //   });
-    // });
+    it('should get a book by its id', done => {
+      const genre = new Genre ({name: 'Crime'});
+      const creator = new Creator({lastName: 'Writer' , foreName: 'Steven', origin: 'Germany' });
+      const book = new Book({ title: 'A Book', creator, genre ,link: 'www.google.com' });
+      book.save((error, newBook) => {
+        chai.request(app)
+          .get(`/api/book/${newBook.id}`)
+          .end((err, res) => {
+            res.should.have.status(200);
+            res.body.should.be.a('object');
+            res.body.should.have.a.property('title');
+            res.body.should.have.a.property('creator');
+            res.body.should.have.a.property('genre');
+            res.body.should.have.a.property('link');
+            res.body.should.have.property('_id').eql(newBook.id);
+            done();
+          });
+      });
+    });
 
-    // it('should update a book by its id', done => {
-    //   const genre = new Genre ({name: 'Crime'});
-    //   const creator = new Creator({lastName: 'Writer' , foreName: 'Steven', origin: 'Germany' });
-    //   const book = new Book({ title: 'A Book', creator, genre ,link: 'www.google.com' });
-    //   book.save((error, newBook) => {
-    //     chai.request(app)
-    //       .put(`/api/book/${newBook.id}`)
-    //       .send({ weight: 5 })
-    //       .end((err, res) => {
-    //         res.should.have.status(200);
-    //         done();
-    //       });
-    //   });
-    // });
+    it('should update a book by its id', done => {
+      const genre = new Genre ({name: 'Crime'});
+      const creator = new Creator({lastName: 'Writer' , foreName: 'Steven', origin: 'Germany' });
+      const book = new Book({ title: 'A Book', creator, genre ,link: 'www.google.com' });
+      book.save((error, newBook) => {
+        chai.request(app)
+          .put(`/api/book/${newBook.id}`)
+          .send({ weight: 5 })
+          .end((err, res) => {
+            res.should.have.status(200);
+            done();
+          });
+      });
+    });
 
-    // it('should delete a book by its id', done => {
-    //   const genre = new Genre ({name: 'Crime'});
-    //   const creator = new Creator({lastName: 'Writer' , foreName: 'Steven', origin: 'Germany' });
-    //   const book = new Book({ title: 'A Book', creator, genre ,link: 'www.google.com' });
-    //   book.save((error, newBook) => {
-    //     chai.request(app)
-    //       .del(`/api/book/${newBook.id}`)
-    //       .end((err, res) => {
-    //         res.should.have.status(200);
-    //         done();
-    //       });
-    //   });
-    // });
+    it('should delete a book by its id', done => {
+      const genre = new Genre ({name: 'Crime'});
+      const creator = new Creator({lastName: 'Writer' , foreName: 'Steven', origin: 'Germany' });
+      const book = new Book({ title: 'A Book', creator, genre ,link: 'www.google.com' });
+      book.save((error, newBook) => {
+        chai.request(app)
+          .del(`/api/book/${newBook.id}`)
+          .end((err, res) => {
+            res.should.have.status(200);
+            done();
+          });
+      });
+    });
   });
 
 });

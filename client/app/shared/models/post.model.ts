@@ -1,12 +1,13 @@
-import Book from '../../../../server/models/book';
-import User from '../../../../server/models/user';
+import {Book} from './book.model';
+import {User} from './user.model';
+
 export class Post {
-  id?: string;
+  _id?: string;
   title?: string;
   text?: string;
-  upVote?: number;
-  downVote?: number;
-  object?: typeof Book;
+  upVotes?: number;
+  downVotes?: number;
+  book?: Book;
 
-  user?: typeof User;
+  user?: User;
 }

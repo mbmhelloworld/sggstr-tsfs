@@ -14,8 +14,8 @@
           </a>
         </li>
         <li class="nav-item">
-          <a routerLink="/sggstr" class="nav-link" routerLinkActive="active">
-            <i class="fa fa-list"></i> sggstr
+          <a routerLink="/create" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+            <i class="fa fa-list"></i> DoSuggs
           </a>
         </li>
         <li class="nav-item">

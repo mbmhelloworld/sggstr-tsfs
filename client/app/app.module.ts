@@ -15,21 +15,23 @@ import { AuthGuardLogin } from './services/auth-guard-login.service';
 import { AuthGuardAdmin } from './services/auth-guard-admin.service';
 // Components
 import { AppComponent } from './app.component';
-import { FrontPageComponent } from './components/frontPage/frontPage.component';
+import { FrontPageComponent } from './components/front-page/front-page.component';
 import { RegisterComponent } from './components/administration/register/register.component';
 import { LoginComponent } from './components/administration/login/login.component';
 import { LogoutComponent } from './components/administration/logout/logout.component';
 import { AccountComponent } from './components/administration/account/account.component';
 import { AdminComponent } from './components/administration/admin/admin.component';
 import { NotFoundComponent } from './components/administration/not-found/not-found.component';
-import { BooksComponent } from './components/books/books.component';
-import { CreatorsComponent } from './components/creators/creators.component';
-import { GenresComponent } from './components/genres/genres.component';
-import { PostsComponent } from './components/posts/posts.component';
-import { AddCreatorComponent } from './components/creators/add-creator/add-creator.component';
-import { AddBookComponent } from './components/books/add-book/add-book.component';
-import { AddGenreComponent } from './components/genres/add-genre/add-genre.component';
-import { AddPostComponent } from './components/posts/add-post/add-post.component';
+import { BooksComponent } from './components/create-page/models/books/books.component';
+import { CreatorsComponent } from './components/create-page/models/creators/creators.component';
+import { GenresComponent } from './components/create-page/models/genres/genres.component';
+import { PostsComponent } from './components/create-page/models/posts/posts.component';
+import { AddCreatorComponent } from './components/create-page/models/creators/add-creator/add-creator.component';
+import { AddBookComponent } from './components/create-page/models/books/add-book/add-book.component';
+import { AddGenreComponent } from './components/create-page/models/genres/add-genre/add-genre.component';
+import { AddPostComponent } from './components/create-page/models/posts/add-post/add-post.component';
+import { CreatePageComponent } from './components/create-page/create-page.component';
+import { SuggestionComponent } from './components/front-page/suggestion/suggestion.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,10 @@ import { AddPostComponent } from './components/posts/add-post/add-post.component
     AddCreatorComponent,
     AddBookComponent,
     AddGenreComponent,
-    AddPostComponent
+    AddPostComponent,
+    CreatePageComponent,
+    SuggestionComponent,
+    SuggestionComponent
   ],
   imports: [
     AppRoutingModule,
@@ -56,7 +61,7 @@ import { AddPostComponent } from './components/posts/add-post/add-post.component
     JwtModule.forRoot({
       config: {
         tokenGetter: (): string | null => localStorage.getItem('token'),
-        // allowedDomains: ['localhost:3000', 'localhost:4200']
+        allowedDomains: ['localhost:3000', 'localhost:4200']
       }
     })
   ],
